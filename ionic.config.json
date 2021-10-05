@@ -1,0 +1,7 @@
+{
+  "name": "signal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
