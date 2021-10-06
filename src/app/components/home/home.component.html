@@ -1,0 +1,10 @@
+<ion-title>
+  <h1>Categorías</h1>
+</ion-title>
+<ion-slides [options]="slideOpts" *ngFor="let category of categories">
+  <ion-slide>
+    <ion-card>
+      <img src="{{ category.url }}">
+    </ion-card>
+  </ion-slide>
+</ion-slides>
