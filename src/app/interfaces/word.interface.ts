@@ -5,8 +5,8 @@ export interface Word {
     name:        string;
     url:         string;
     category_id: number;
-    created_at:  Date;
-    updated_at:  Date;
-    category:    Category;
+    created_at?:  Date;
+    updated_at?:  Date;
+    category?:    Category;
 }
 

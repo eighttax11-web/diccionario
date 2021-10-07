@@ -21,4 +21,9 @@ export class WordsService {
     const query = `word/category/${id}`;
     return this.executeQuery<Word>(query);
   }
+
+  getWord(id: string | number) {
+    const query = `word/${id}`;
+    return this.executeQuery<Word>(query);
+  }
 }

@@ -4,7 +4,7 @@
     <h1>Lista de palabras</h1>
   </ion-title>
   <ion-list>
-    <ion-item *ngFor="let word of words;">
+    <ion-item *ngFor="let word of words;" (click)="verPalabra(word.id)">
       <ion-label>{{ word.category.name }} - {{ word.name }}</ion-label>
     </ion-item>
   </ion-list>

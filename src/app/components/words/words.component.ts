@@ -2,7 +2,8 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Word } from 'src/app/interfaces/word.interface';
 import { WordsService } from 'src/app/services/words.service';
 import { ActivatedRoute } from '@angular/router';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { IonInfiniteScroll, ModalController } from '@ionic/angular';
+import { WordComponent } from '../word/word.component';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class WordsComponent implements OnInit {
   id;
 
   constructor(private wordsService: WordsService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params['id'];
@@ -47,5 +49,16 @@ export class WordsComponent implements OnInit {
       event.target.complete();
 
     }, 500);
+  }
+
+  async verPalabra(id: string | number) {
+    const modal = await this.modalCtrl.create({
+      component: WordComponent,
+      componentProps: {
+        id
+      }
+    });
+    
+    modal.present();
   }
 }
