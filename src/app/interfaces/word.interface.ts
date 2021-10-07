@@ -1,3 +1,5 @@
+import { Category } from "./category.interface";
+
 export interface Word {
     id:          number;
     name:        string;
@@ -5,4 +7,6 @@ export interface Word {
     category_id: number;
     created_at:  Date;
     updated_at:  Date;
+    category:    Category;
 }
+

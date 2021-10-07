@@ -1,3 +1,18 @@
-<p>
-  words works!
-</p>
+
+<ion-content>
+  <ion-title>
+    <h1>Lista de palabras</h1>
+  </ion-title>
+  <ion-list>
+    <ion-item *ngFor="let word of words;">
+      <ion-label>{{ word.category.name }} - {{ word.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
