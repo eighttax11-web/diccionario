@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { IonicModule } from '@ionic/angular';
 import { WordsComponent } from './words/words.component';
 import { WordComponent } from './word/word.component';
+import { CameraComponent } from './camera/camera.component';
 
 
 
@@ -11,12 +12,14 @@ import { WordComponent } from './word/word.component';
   declarations: [
     HomeComponent,
     WordsComponent,
-    WordComponent
+    WordComponent,
+    CameraComponent
   ],
   exports: [
     HomeComponent,
     WordsComponent,
-    WordComponent
+    WordComponent,
+    CameraComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CameraComponent } from './components/camera/camera.component';
 import { WordsComponent } from './components/words/words.component';
 
 const routes: Routes = [
@@ -12,7 +13,12 @@ const routes: Routes = [
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
-  {path: 'words/:id' , component: WordsComponent}
+  {
+    path: 'words/:id' , component: WordsComponent
+  },
+  {
+    path: 'camera', component: CameraComponent
+  }
 
 ];
 
