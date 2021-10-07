@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { WordsComponent } from './components/words/words.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,9 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+  },
+  {path: 'words/:id' , component: WordsComponent}
+
 ];
 
 @NgModule({

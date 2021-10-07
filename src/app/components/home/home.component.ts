@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/interfaces/category.interface';
 import { CategoriesService } from '../../services/categories.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ export class HomeComponent implements OnInit {
 
   categories: Category[] = [];
 
-  constructor(private categoriesService: CategoriesService) { }
+  constructor(private categoriesService: CategoriesService,
+              private router:Router) { }
 
   ngOnInit() {
     this.categoriesService.getCategory().subscribe(
@@ -27,4 +29,7 @@ export class HomeComponent implements OnInit {
     freeMode: true
   }
 
+  verPalabras(id: number | string) {
+    this.router.navigate(['/words/'+id]);
+  }
 }

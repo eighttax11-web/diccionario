@@ -3,7 +3,7 @@
 </ion-title>
 <ion-slides [options]="slideOpts" *ngFor="let category of categories">
   <ion-slide>
-    <ion-card>
+    <ion-card (click)="verPalabras(category.id)">
       <img src="{{ category.url }}">
     </ion-card>
   </ion-slide>
