@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Word } from 'src/app/interfaces/word.interface';
 import { WordsService } from 'src/app/services/words.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IonInfiniteScroll, ModalController } from '@ionic/angular';
 import { WordComponent } from '../word/word.component';
 
@@ -20,7 +20,8 @@ export class WordsComponent implements OnInit {
 
   constructor(private wordsService: WordsService,
               private activatedRoute: ActivatedRoute,
-              private modalCtrl: ModalController) { }
+              private modalCtrl: ModalController,
+              private router: Router) { }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params['id'];
@@ -38,14 +39,7 @@ export class WordsComponent implements OnInit {
       
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
-      if (this.words.length == 1000) {
-        event.target.complete();
-        event.target.disabled = true;
-        return;
-      }
-
-      const nuevoArray = Array(20);
-      this.words.push(...nuevoArray);
+      
       event.target.complete();
 
     }, 500);
@@ -60,5 +54,9 @@ export class WordsComponent implements OnInit {
     });
     
     modal.present();
+  }
+
+  regresar() {
+    this.router.navigate(['/']);
   }
 }

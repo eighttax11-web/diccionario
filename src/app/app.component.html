@@ -6,10 +6,14 @@
           <ion-list-header>SignalsTalk</ion-list-header>
           <ion-note></ion-note>
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" [routerLink]="['/']" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" ios="home-outline" md="home-sharp"></ion-icon>
+              <ion-label>Inicio</ion-label>
+            </ion-item>
+            <ion-item routerDirection="root" href="https://floating-bayou-34209.herokuapp.com/" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" ios="paper-plane-outline" md="paper-plane-sharp"></ion-icon>
+              <ion-label>Acerca de</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

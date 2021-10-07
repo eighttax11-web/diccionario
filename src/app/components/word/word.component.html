@@ -1,15 +1,19 @@
 <ion-content>
+  <div class="card">
+    <div class="image">
+      <img src="{{ word.url }}" alt="">
+    </div>
 
-  <ion-label class="titulo">
-    <h1> {{ word.name }} </h1>
-  </ion-label>
-
+    <div class="card-content">
+      <div class="card-title">
+        <h1> {{ word.name }} </h1>
+      </div>
+    </div>
+  </div>
 </ion-content>
 
-
 <ion-footer no-border>
-  <ion-toolbar color="dark">
-
+  <ion-toolbar (click)="regresar()">
     <ion-buttons slot="start">
       <ion-button (click)="regresar()">
         <ion-icon slot="start" name="arrow-undo-outline"></ion-icon>
